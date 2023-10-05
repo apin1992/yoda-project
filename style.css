@@ -3,19 +3,31 @@
 :root {
     --yoda: #91C78a;
     --dg: #000a00;
+    --text-color: #EDEDED;
+    --dg-2: #001e00;
+
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 
 }
 
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
 body {
     background: var(--dg);
-    color: #EDEDED;
+    color: var(--text-color);
 }
 
 .header {
@@ -23,7 +35,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 2rem 9%;
     background: transparent;
     display: flex;
     justify-content: space-between;
@@ -33,35 +45,17 @@ body {
 
 .logo {
     position: relative;
-    font-size: 25px;
-    color: var(--dg);
-    text-decoration: none;
+    font-size: 2.5rem;
+    color: var(--yoda);
     font-weight: 600;
-    border-radius: 50%;
-
-
-
-}
-
-.logo::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    width: 10px;
-    animation: showRight 1s ease forwards;
-    animation-delay: .4s;
-    border-radius: 50%;
 }
 
 .navbar a {
-    font-size: 18px;
-    color: #EDEDED;
+    font-size: 1.7rem;
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
+    margin-left: 3.5rem;
     transition: .3s;
 
 }
@@ -71,66 +65,87 @@ body {
     color: var(--yoda);
 }
 
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
 .home {
     display: flex;
     align-items: center;
+    padding: 0 9%;
+    /* might need to delete below */
     height: 100vh;
-    background: url('images/yoda-home.png') no-repeat;
+    background: url('images/home-yoda-2.png') no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 0 10%;
+
 }
 
 .home-content {
-    max-width: 600px;
+    max-width: 60rem;
 }
 
 .home-content h1 {
-    font-size: 56px;
+    font-size: 6.6rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.3;
 
 }
 
+.home-content .text-animate {
+    position: relative;
+    width: 32.8rem;
+}
 
-.home-content h3 {
-    font-size: 32px;
+
+.home-content .text-animate h3 {
+    font-size: 3.2rem;
     font-weight: 700;
-    color: var(--yoda);
+    color: transparent;
+    -webkit-text-stroke: .7px var(--yoda);
 }
 
 .home-content p {
-    font-size: 16px;
-    margin: 20px 0 40px;
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;
 
 }
 
-.home-content .btn-box {
+/* Buttons Section */
+
+.btn-box {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    width: 345px;
-    height: 50px;
+    width: 34.5rem;
+    height: 5rem;
 }
 
-.btn-box a {
+.btn-box .btn {
     position: relative;
-    width: 150px;
-    height: 100%;
-    background: var(--yoda);
-    border: 2px solid var(--yoda);
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
-    font-size: 19px;
-    color: var(--dg);
-    text-decoration: none;
+    width: 15rem;
+    height: 100%;
+    background-color: var(--yoda);
+    border: .2rem solid var(--yoda);
+    border-radius: .8rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: .1rem;
+    color: var(--dg);
     z-index: 1;
     overflow: hidden;
     transition: .5s;
-
 }
 
 .btn-box a:hover {
@@ -138,7 +153,7 @@ body {
 
 }
 
-.btn-box a:nth-child(2) {
+.btn-box .btn:nth-child(2) {
     background: transparent;
     color: var(--yoda);
 }
@@ -147,11 +162,11 @@ body {
     color: var(--dg);
 }
 
-.btn-box a:nth-child(2)::before {
+.btn-box .btn:nth-child(2)::before {
     background: var(--yoda);
 }
 
-.btn-box a::before {
+.btn-box .btn::before {
     content: '';
     position: absolute;
     top: 0;
@@ -161,16 +176,16 @@ body {
     background: var(--dg);
     z-index: -1;
     transition: .5s;
-
 }
 
-.btn-box a:hover::before {
+.btn-box .btn:hover::before {
     width: 100%;
 }
 
+/* Social Media Icons */
 .home-sci {
     position: absolute;
-    bottom: 40px;
+    bottom: 4rem;
     width: 170px;
     display: flex;
     justify-content: space-between;
@@ -184,7 +199,7 @@ body {
     width: 40px;
     height: 40px;
     background: transparent;
-    border: 2px solid var(--yoda);
+    border: .2rem solid var(--yoda);
     border-radius: 50%;
     font-size: 20px;
     color: var(--yoda);
@@ -216,32 +231,14 @@ body {
 .home-sci a:hover::before {
     width: 100%;
 }
-/* contact page */ 
-.contact-yoda {
-    color: var(--yoda);
-    display: flex;
-    justify-content:space-between;
-    flex-direction: row;
-    text-align: center;
 
-    width: 650px;
-}
-.contact-yoda i {
-    margin: 50px;
-    font-size: 40px;
+/* Image Hover */
 
-}
-.contact-yoda p {
-    margin-right: 15px;
-}
-
-
-/*
 .home-imgHover {
     position: absolute;
     top: 0;
-    right: 30px;
-    width: 750px;
+    right: 0;
+    width: 51%;
     height: 100%;
     background: transparent;
     transition: 3s;
@@ -251,95 +248,36 @@ body {
     opacity: .8;
     background: #000;
 }
-*/
 
-@media (min-width: 320px) and (max-width: 700px) {
-    header {
-        display: flex;
+/* About Section */
 
-    }
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--dg);
+    padding-bottom: 6rem;
+}
 
-    .navbar {
-        display: flex;
-        flex-direction: column;
-        padding-right: 40%;
-    }
+.heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.about-img {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-img img {
+    width: 90%;
+    border-radius: 50%;
+    border: .2rem solid var(--yoda);
+}
 
-    .home-content {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .home h1 {
-        font-size: 20px;
-    }
-
-    .home h3 {
-        font-size: 18px;
-    }
-
-    .home p {
-        font-size: 14px;
-    }
-
-    .btn-box {
-        display: flex;
-        flex-direction: column;
-
-    }
-
-    .btn-box a {
-        font-size: 14px;
-        padding: 15px;
-        margin-bottom: 5px;
-
-    }
-
-    .home p {
-        margin-bottom: 10px;
-    }
-    .contact-yoda {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        font-size: 12px;
-        flex: 1fr 1fr;
-        justify-content: space-between;
-    }
-    .contact-yoda i {
-        font-size: 20px;
-        margin-right: -1px;
-    }
-    .contact-yoda p {
-        font-size: 12px;
-    }
-
-
-
-    @media (min-width: 768px) and (max-width: 1023px) {
-
-        .navbar a,
-        .navbar {
-            height: 100px;
-            width: 50%;
-            display: flex;
-            justify-content: left;
-            font-size: 16px;
-            margin: 10px;
-            padding: 0;
-        }
-
-        .logo {
-
-            margin-right: 10px;
-            margin-left: -40px;
-        }
-
-        .header {
-
-            display: inline-flex;
-            justify-content: flex-start;
-
-        }
-    }
