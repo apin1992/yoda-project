@@ -216,6 +216,25 @@ body {
 .home-sci a:hover::before {
     width: 100%;
 }
+/* contact page */ 
+.contact-yoda {
+    color: var(--yoda);
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    text-align: center;
+
+    width: 650px;
+}
+.contact-yoda i {
+    margin: 50px;
+    font-size: 40px;
+
+}
+.contact-yoda p {
+    margin-right: 15px;
+}
+
 
 /*
 .home-imgHover {
@@ -280,6 +299,22 @@ body {
     .home p {
         margin-bottom: 10px;
     }
+    .contact-yoda {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+        flex: 1fr 1fr;
+        justify-content: space-between;
+    }
+    .contact-yoda i {
+        font-size: 20px;
+        margin-right: -1px;
+    }
+    .contact-yoda p {
+        font-size: 12px;
+    }
+
 
 
     @media (min-width: 768px) and (max-width: 1023px) {
